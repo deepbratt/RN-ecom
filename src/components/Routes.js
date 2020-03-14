@@ -5,7 +5,7 @@ import Login from '../pages/Login';
 import Signup from '../pages/Signup';
 import Profile from "../pages/Profile";
 
-export default class Routes extends Component<{}> {
+export default class Routes extends Component{
 	render() {
 		return(
 			<Router>
