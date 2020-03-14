@@ -3,8 +3,8 @@ import {
   StyleSheet,
   View,
   TouchableOpacity,
-  Dimensions,
-  Image
+  Image,
+
 } from 'react-native';
 import {connect} from "react-redux";
 import {compose} from "redux";
@@ -12,43 +12,11 @@ import { Field, reduxForm } from 'redux-form';
 
 import InputText from "../../components/InputText";
 import {loginUser} from "../../actions/auth.actions";
-import Logo from '../../components/Logo';
-import Form from '../../components/Form';
+
 import Loader from "../../components/Loader";
 import {Actions} from 'react-native-router-flux';
-import { Container, Content, Form, Item, Input, Icon, Button, Text, Col, Row, Grid, Toast } from 'native-base';
-
-const deviceHeight = Dimensions.get("window").height;
-
-const styles = StyleSheet.create({
-  drawerCover: {
-    alignSelf: "stretch",
-    height: deviceHeight / 3.5,
-    width: null,
-    position: "relative",
-    marginBottom: 10,
-    height: 150
-  },
-  drawerImage: {
-    alignSelf : 'center',
-    height:60,
-    width:60
-  },
-  profileText: {
-    fontSize:16,
-    color:'white'
-  },
-  sideBarIcon: {
-    color: "#62138F",
-    fontSize: 26,
-    width: 30
-  },
-  sideBarSeperator : {
-    borderBottomColor: '#ccc',
-    borderBottomWidth: 1,
-    height:2
-  }
-});
+import { Container, Content, Item, Form,Input, Icon, Button, Text, Col, Row, Grid, Toast } from 'native-base';
+import Styles from './style';
 
 
 class Login extends Component{
@@ -115,6 +83,7 @@ class Login extends Component{
               </View>
             </View>*/}
             <Content style={{ marginTop: 60, borderBottomColor: "#CCC", borderBottomWidth: 7 }} padder>
+              {(loginUser && loginUser.isLoading) && <Loader />}
                 <Grid style={{}}>
                     <Row style={{ height: 100 }}>
                         <Col style={{ height: 100 }}>
@@ -133,23 +102,28 @@ class Login extends Component{
                         {/*<Input placeholder='Email or Phone Number' keyboardType="email-address"
                         onChangeText={e => setEmail(e)}  value={email} style={{ fontFamily: "Montserrat" }}
                           />*/}
-                        <Field
-                        name="email"
-                        placeholder="Email"
-                        keyboardType="email-address"
-                        component={this.renderTextInput}
-                        style={{ fontFamily: "Montserrat" }}
+                        <Input
+                          name="email"
+                          underlineColorAndroid='#fff'
+                          placeholder="Email"
+                          placeholderTextColor = "#000"
+                          selectionColor="#fff"
+                          keyboardType="email-address"
+                          onSubmitEditing={()=> this.password.focus()}
+                          style={{ fontFamily: "Montserrat" }}
                         />
                     </Item>
                     <Item regular style={{ marginTop: 10, borderRadius: 5, borderWidth: 2, borderColor: "#6A077F" }}>
                         <Icon name='lock' style={{ color: "#6A077F" }} />
                         {/*<Input placeholder='Password' secureTextEntry={true} style={{ fontFamily: "Montserrat" }}  onChangeText={e => setUserPassword(e)} value={userPassword} />*/}
-                        <Field
-                        name="userPassword"
-                        placeholder="Password"
-                        secureTextEntry={true}
-                        component={this.renderTextInput}
-                        style={{ fontFamily: "Montserrat" }}
+                        <Input
+                          name="userPassword"
+                          underlineColorAndroid='rgba(0,0,0,0)'
+                          placeholder="Password"
+                          secureTextEntry={true}
+                          placeholderTextColor = "#000"
+                          component={this.renderTextInput}
+                          style={{ fontFamily: "Montserrat" }}
                         />
                     </Item>
                     <Grid>
@@ -194,9 +168,6 @@ class Login extends Component{
 
 const validate = (values) => {
     const errors = {};
-    if(!values.name) {
-        errors.name = "Name is required"
-    }
     if(!values.email) {
         errors.email = "Email is required"
     }
