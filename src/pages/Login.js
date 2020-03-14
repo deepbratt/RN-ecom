@@ -18,6 +18,7 @@ import {Actions} from 'react-native-router-flux';
 import { Container, Content, Form, Item, Input, Icon, Button, Text, Col, Row, Grid, Toast } from 'native-base';
 
 const deviceHeight = Dimensions.get("window").height;
+
 const styles = StyleSheet.create({
   drawerCover: {
     alignSelf: "stretch",
@@ -117,7 +118,7 @@ class Login extends Component<{}> {
                     <Row style={{ height: 100 }}>
                         <Col style={{ height: 100 }}>
                             <Image source={{
-                                uri: 'https://wanted7cdn.s3.ap-south-1.amazonaws.com/uploads/defaults/logo.png'
+                                uri: 'https://wanted7cdn.s3.ap-south-1.amazonaws.com/uploads/defaults/wanted_7_logo.png'
                             }}
                                 style={{ width: 150, height: 120, marginLeft: 110 }} />
                         </Col>
