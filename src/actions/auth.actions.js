@@ -44,7 +44,7 @@ export const loginUser = (payload) => {
           dispatch({
             type: "LOGIN_USER_LOADING"
           });
-          const response = await fetchApi("/user/login", "POST", payload, 200);
+          const response = await fetchApi("/auth/login", "POST", payload, 200);
 
           if(response.success) {
             dispatch({
@@ -79,7 +79,7 @@ export const logoutUser = () => {
         try {
             const {authReducer: {authData: {token}}} = state;
             console.log(token);
-            const response = await fetchApi("/user/logout", "DELETE", null, 200, token);
+            const response = await fetchApi("/auth/logout", "DELETE", null, 200, token);
             console.log(response);
             dispatch({
                 type: "USER_LOGGED_OUT_SUCCESS"
