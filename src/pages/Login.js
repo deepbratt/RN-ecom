@@ -136,11 +136,19 @@ class Login extends Component<{}> {
                         placeholder="Email"
                         keyboardType="email-address"
                         component={this.renderTextInput} 
+                        style={{ fontFamily: "Montserrat" }}
                         />
                     </Item>
                     <Item regular style={{ marginTop: 10, borderRadius: 5, borderWidth: 2, borderColor: "#6A077F" }}>
                         <Icon name='lock' style={{ color: "#6A077F" }} />
                         {/*<Input placeholder='Password' secureTextEntry={true} style={{ fontFamily: "Montserrat" }}  onChangeText={e => setUserPassword(e)} value={userPassword} />*/}
+                        <Field
+                        name="userPassword"
+                        placeholder="Password"
+                        secureTextEntry={true}
+                        component={this.renderTextInput} 
+                        style={{ fontFamily: "Montserrat" }}
+                        />
                     </Item>
                     <Grid>
                         <Row>

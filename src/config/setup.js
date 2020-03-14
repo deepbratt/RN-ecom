@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import * as Font from 'expo-font';
-import { Ionicons,MaterialIcons } from '@expo/vector-icons';
 import {Actions} from 'react-native-router-flux';
 import { YellowBox,StatusBar } from 'react-native';
 import {connect} from 'react-redux';
@@ -12,11 +10,16 @@ class Setup extends Component {
     loading:true
   }
   async componentDidMount() {
-    await Font.loadAsync({
+    await Expo.Font.loadAsync({
         'Montserrat': require('../../assets/Fonts/Montserrat-Regular.ttf'),
         'Montserrat_Semibold': require('../../assets/Fonts/Montserrat-SemiBold.ttf'),
         'Montserrat_bold': require('../../assets/Fonts/Montserrat-Bold.ttf'),
-        ...Ionicons.font, ...MaterialIcons.font
+        "Ionicons": require('@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.ttf'),  //MaterialIcons
+        "MaterialIcons": require('@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/MaterialIcons.ttf'),
+
+        
+        //...Ionicons.font, 
+        //...MaterialIcons.font
     })
     this.setState({ loading: false })
 }
