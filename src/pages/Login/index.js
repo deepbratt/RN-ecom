@@ -1,4 +1,3 @@
-@@ -1,222 +0,0 @@
 import React, { Component } from 'react';
 import {
   StyleSheet,
@@ -52,7 +51,7 @@ const styles = StyleSheet.create({
 });
 
 
-class Login extends Component<{}> {
+class Login extends Component{
 
 	signup() {
 		Actions.signup()
