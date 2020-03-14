@@ -11,11 +11,11 @@ import {connect} from "react-redux";
 import {compose} from "redux";
 import { Field, reduxForm } from 'redux-form';
 
-import InputText from "../components/InputText";
-import {loginUser} from "../actions/auth.actions";
-import Logo from '../components/Logo';
-import Form from '../components/Form';
-import Loader from "../components/Loader";
+import InputText from "../../components/InputText";
+import {loginUser} from "../../actions/auth.actions";
+import Logo from '../../components/Logo';
+import Form from '../../components/Form';
+import Loader from "../../components/Loader";
 import {Actions} from 'react-native-router-flux';
 
 
