@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
 });
 
 
-class Login extends Component {
+class Login extends Component{
 
 	signup() {
 		Actions.signup()
