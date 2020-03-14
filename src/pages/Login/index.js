@@ -11,10 +11,11 @@ import {connect} from "react-redux";
 import {compose} from "redux";
 import { Field, reduxForm } from 'redux-form';
 
-import InputText from "../components/InputText";
-import {loginUser} from "../actions/auth.actions";
-import Logo from '../components/Logo';
-import Loader from "../components/Loader";
+import InputText from "../../components/InputText";
+import {loginUser} from "../../actions/auth.actions";
+import Logo from '../../components/Logo';
+import Form from '../../components/Form';
+import Loader from "../../components/Loader";
 import {Actions} from 'react-native-router-flux';
 import { Container, Content, Form, Item, Input, Icon, Button, Text, Col, Row, Grid, Toast } from 'native-base';
 
@@ -39,9 +40,9 @@ const styles = StyleSheet.create({
     color:'white'
   },
   sideBarIcon: {
-    color: "#62138F", 
-    fontSize: 26, 
-    width: 30 
+    color: "#62138F",
+    fontSize: 26,
+    width: 30
   },
   sideBarSeperator : {
     borderBottomColor: '#ccc',
@@ -130,14 +131,14 @@ class Login extends Component<{}> {
                 <Form style={{ marginTop: 40, borderTopColor: "#676767", borderTopWidth: 1 }}>
                     <Item regular style={{ marginTop: 20, borderRadius: 5, borderWidth: 2, borderColor: "#6A077F" }}>
                         <Icon name='mail' style={{ color: "#6A077F" }} />
-                        {/*<Input placeholder='Email or Phone Number' keyboardType="email-address" 
+                        {/*<Input placeholder='Email or Phone Number' keyboardType="email-address"
                         onChangeText={e => setEmail(e)}  value={email} style={{ fontFamily: "Montserrat" }}
                           />*/}
                         <Field
                         name="email"
                         placeholder="Email"
                         keyboardType="email-address"
-                        component={this.renderTextInput} 
+                        component={this.renderTextInput}
                         style={{ fontFamily: "Montserrat" }}
                         />
                     </Item>
@@ -148,7 +149,7 @@ class Login extends Component<{}> {
                         name="userPassword"
                         placeholder="Password"
                         secureTextEntry={true}
-                        component={this.renderTextInput} 
+                        component={this.renderTextInput}
                         style={{ fontFamily: "Montserrat" }}
                         />
                     </Item>
