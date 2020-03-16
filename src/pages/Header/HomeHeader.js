@@ -23,7 +23,6 @@ const tabData = [
 
 export default function HomeHeader(props){
   const [logoClick,currentLogoClick] = useState(false);
-  
     return (
       <>
         <Header style={styles.HeadBg}>

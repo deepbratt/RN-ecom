@@ -231,10 +231,16 @@ const data = [{
     }]
 }];
 
+//nChange={()=> setStoreNameChecked(!storeNameChecked)}
 export default function Products (props) {
  const [cart, setCart] = useState(data);
  const [storeNameChecked,setStoreNameChecked] = useState(true);
  const [modal,setModal] = useState(false);
+
+ const onCheck = (dataID) => {
+    setStoreNameChecked(!storeNameChecked);
+    console.log(dataID);
+}
   return (
     <>
         <Content style={{borderBottomWidth: 5, borderBottomColor: '#CCC'}}>
@@ -244,12 +250,12 @@ export default function Products (props) {
             return(
                 <Grid style={styles.cpnGrid1} key={index}>
                     <Row style={styles.greyBackground} key={index}>
-                        <CheckBox  style={{marginTop:-4}} onChange={()=> setStoreNameChecked(!storeNameChecked)} 
+                        <CheckBox  style={{marginTop:-4}} onChange={()=> onCheck(data.id)} 
                         value={storeNameChecked} />
                         <Text style={styles.productbrand}> {data.storeName} </Text>
                         <Right>
                             <TouchableOpacity onPress={() => setModal(!modal)}>
-                                <Text style={{fontSize: 13}}> Get Coupons </Text>
+                                <Text style={{fontSize: 13}}> {modal ? "Hide" : "Get"} Coupons </Text>
                             </TouchableOpacity>
                         </Right>
                     </Row>
