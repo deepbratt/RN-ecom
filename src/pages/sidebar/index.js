@@ -16,7 +16,6 @@ import {
 
 import { Col, Row, Grid } from 'react-native-easy-grid';
 import styles from "./style";
-import { Actions } from "react-native-router-flux";
 
 const drawerCover = require("../../../assets/drawer-cover.png");
 const profileImage = require("../../../assets/contacts/sankhadeep.png");

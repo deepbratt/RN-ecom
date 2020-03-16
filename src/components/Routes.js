@@ -23,7 +23,6 @@ import SetUpPassword from "./../pages/ForgotPassword/SetUpPassword";
 import StoreDetails from "./../pages/storeDetails";
 import Orders from "./../pages/orders";
 import OrderDetail from "./../pages/orderDetails";
-import HomeHeader from './../pages/Header/HomeHeader';
 
 export default class Routes extends Component{
 	render() {
