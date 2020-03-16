@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import {Router, Stack, Scene} from 'react-native-router-flux';
 
-import { createDrawerNavigator } from 'react-navigation/drawer';
-import { NavigationContainer } from 'react-navigation/native';
-
 import Home from "./../pages/home/";
 import Wanted7 from "./../pages/home/wantedProducts";
 import Wmalls from "./../pages/home/wmalls";
@@ -27,8 +24,6 @@ import StoreDetails from "./../pages/storeDetails";
 import Orders from "./../pages/orders";
 import OrderDetail from "./../pages/orderDetails";
 
-const Drawer = createDrawerNavigator();
-
 export default class Routes extends Component{
 	render() {
 		return(
@@ -48,15 +43,6 @@ export default class Routes extends Component{
 						<Scene key="setuppassword" component={SetUpPassword} />
 					</Scene>
 					<Scene key="app" hideNavBar={true} initial={this.props.isLoggedIn}>
-						<Drawer
-							hideNavBar
-							key="drawerMenu"
-							contentComponent={SideBar}
-							drawerWidth={250}
-							drawerPosition="right"
-						>
-							<Scene key="drawerMenu" component={SideBar} initial={true} />
-						</Drawer>
 						<Scene key="home" component={Home} initial={true} />
 						<Scene key="profile" component={MyProfile} />
 						<Scene key="wanted7" component={Wanted7} />

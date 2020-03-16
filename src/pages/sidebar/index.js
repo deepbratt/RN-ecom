@@ -12,8 +12,10 @@ import {
   Thumbnail,
   Separator
 } from "native-base";
+
 import { Col, Row, Grid } from 'react-native-easy-grid';
 import styles from "./style";
+import { Actions } from "react-native-router-flux";
 
 const drawerCover = require("../../../assets/drawer-cover.png");
 const profileImage = require("../../../assets/contacts/sankhadeep.png");
@@ -153,7 +155,8 @@ class SideBar extends Component {
               <ListItem
                 button
                 noBorder
-                onPress={() => this.props.navigation.navigate(data.route)}
+                //onPress={() => this.props.navigation.navigate(data.route)}
+                onPress={() => Actions.data.route()}
               >
                 <Left>
                   <Icon

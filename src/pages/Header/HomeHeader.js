@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {Actions} from 'react-native-router-flux';
 import { Header, Left, Body, Right, Button, Icon, Title,Item,Input,Text,Content} from 'native-base';
 import { StatusBar,View,Image } from "react-native";
 import styles from './styles';
@@ -30,7 +31,7 @@ export default function HomeHeader(props){
           <Left style={styles.barcont}>
             <Button
               transparent
-              onPress={() => props.navigation.dispatch(DrawerActions.openDrawer())}>
+              onPress={() => Actions.sidebar()}>
               <Icon name="dehaze" type="MaterialIcons" style={styles.iconSet}/>
             </Button>
           </Left>
