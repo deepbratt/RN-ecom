@@ -30,7 +30,7 @@ export default function HomeHeader(props){
           <Left style={styles.barcont}>
             <Button
               transparent
-              onPress={() => props.navigation.openDrawer()}>
+              onPress={() => props.navigation.dispatch(DrawerActions.openDrawer())}>
               <Icon name="dehaze" type="MaterialIcons" style={styles.iconSet}/>
             </Button>
           </Left>
