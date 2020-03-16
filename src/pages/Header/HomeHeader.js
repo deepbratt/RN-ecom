@@ -3,6 +3,7 @@ import { Header, Left, Body, Right, Button, Icon, Title,Item,Input,Text,Content}
 import { StatusBar,View,Image } from "react-native";
 import styles from './styles';
 import { Col, Row, Grid } from 'react-native-easy-grid';
+import { Actions } from 'react-native-router-flux';
 const wantedLogo = require("../../../assets/icons/logo2.png");
 
 const tabData = [
@@ -30,7 +31,7 @@ export default function HomeHeader(props){
           <Left style={styles.barcont}>
             <Button
               transparent
-              onPress={() => props.navigation.dispatch(DrawerActions.openDrawer())}>
+              onPress={() => Actions.drawerOpen()}>
               <Icon name="dehaze" type="MaterialIcons" style={styles.iconSet}/>
             </Button>
           </Left>

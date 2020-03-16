@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Image,ImageBackground,AsyncStorage } from "react-native";
+import { Actions } from 'react-native-router-flux';
 import {
   Content,
   Text,
@@ -153,7 +154,7 @@ class SideBar extends Component {
               <ListItem
                 button
                 noBorder
-                onPress={() => this.props.navigation.navigate(data.route)}
+                onPress={() => Actions.Home()}
               >
                 <Left>
                   <Icon

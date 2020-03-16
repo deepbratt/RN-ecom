@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import {Router, Stack, Scene} from 'react-native-router-flux';
 
-import { createDrawerNavigator } from 'react-navigation/drawer';
-import { NavigationContainer } from 'react-navigation/native';
-
 import Home from "./../pages/home/";
 import Wanted7 from "./../pages/home/wantedProducts";
 import Wmalls from "./../pages/home/wmalls";
@@ -26,8 +23,7 @@ import SetUpPassword from "./../pages/ForgotPassword/SetUpPassword";
 import StoreDetails from "./../pages/storeDetails";
 import Orders from "./../pages/orders";
 import OrderDetail from "./../pages/orderDetails";
-
-const Drawer = createDrawerNavigator();
+import HomeHeader from './../pages/Header/HomeHeader';
 
 export default class Routes extends Component{
 	render() {
@@ -47,26 +43,17 @@ export default class Routes extends Component{
 						<Scene key="forgototp" component={ForgotOTP} />
 						<Scene key="setuppassword" component={SetUpPassword} />
 					</Scene>
-					<Scene key="app" hideNavBar={true} initial={this.props.isLoggedIn}>
-						<Drawer
-							hideNavBar
-							key="drawerMenu"
-							contentComponent={SideBar}
-							drawerWidth={250}
-							drawerPosition="right"
-						>
-							<Scene key="drawerMenu" component={SideBar} initial={true} />
-						</Drawer>
-						<Scene key="home" component={Home} initial={true} />
-						<Scene key="profile" component={MyProfile} />
-						<Scene key="wanted7" component={Wanted7} />
-						<Scene key="wmalls" component={Wmalls} />
-						<Scene key="productdetails" component={ProductDetails}/>
-						<Scene key="cart" component={Cart} />
-						<Scene key="storedetails" component={StoreDetails} />
-						<Scene key="orders" component={Orders} />
-						<Scene key="orderdetails" component={OrderDetail} />
-						<Scene key="logout" component={Logout} />
+					<Scene key="app" drawer={true} hideNavBar={true} wrap={false} initial={this.props.isLoggedIn} contentComponent={props => <SideBar {...props} />} >
+							<Scene key="Home" component={Home} initial={true} />
+							<Scene key="MyProfile" component={MyProfile} />
+							<Scene key="wanted7" component={Wanted7} />
+							<Scene key="wmalls" component={Wmalls} />
+							<Scene key="productdetails" component={ProductDetails}/>
+							<Scene key="cart" component={Cart} />
+							<Scene key="storedetails" component={StoreDetails} />
+							<Scene key="Orders" component={Orders} />
+							<Scene key="orderdetails" component={OrderDetail} />
+							<Scene key="logout" component={Logout} />
 					</Scene>
 				</Scene>
 			</Router>
