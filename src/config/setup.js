@@ -1,21 +1,24 @@
 import React, { Component } from "react";
 import {Actions} from 'react-native-router-flux';
 import { YellowBox,StatusBar } from 'react-native';
+import * as Font from 'expo-font';
+import { Ionicons,MaterialIcons } from '@expo/vector-icons';
 import {connect} from 'react-redux';
 import Loader from '../components/loader';
 import Routes from '../components/Routes';
+
 
 class Setup extends Component {
   state = {
     loading:true
   }
   async componentDidMount() {
-    await Expo.Font.loadAsync({
+    await Font.loadAsync({
         'Montserrat': require('../../assets/Fonts/Montserrat-Regular.ttf'),
         'Montserrat_Semibold': require('../../assets/Fonts/Montserrat-SemiBold.ttf'),
         'Montserrat_bold': require('../../assets/Fonts/Montserrat-Bold.ttf'),
-        "Ionicons": require('@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.ttf'),  //MaterialIcons
-        "MaterialIcons": require('@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/MaterialIcons.ttf')
+        "Material Icons" : require('@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/MaterialIcons.ttf'),
+        "Ionicons" : require('@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.ttf')
     })
     this.setState({ loading: false })
 }
