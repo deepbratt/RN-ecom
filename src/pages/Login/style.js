@@ -31,5 +31,8 @@ export default {
     borderBottomColor: '#ccc',
     borderBottomWidth: 1,
     height:2
+  },
+  errorText: {
+    color:'#000'
   }
 };
