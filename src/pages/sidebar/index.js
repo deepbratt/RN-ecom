@@ -120,10 +120,12 @@ class SideBar extends Component {
   checkStorage = async() => {
     let myStorage = await AsyncStorage.getItem('MyWanted7Store');
     let customerId = JSON.parse(myStorage);
-    this.setState({custId : customerId})
+    console.warn(this.props);
+    //this.setState({custId : customerId})
   }
 
   render() {
+    console.warn(this.props.isLoggedIn);
     const {custId} = this.state;
     return (
       <Container>
@@ -154,7 +156,6 @@ class SideBar extends Component {
               <ListItem
                 button
                 noBorder
-                //onPress={() => this.props.navigation.navigate(data.route)}
                 onPress={() => this.props.navigation.navigate(data.route)}
               >
                 <Left>
