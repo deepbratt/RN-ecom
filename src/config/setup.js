@@ -15,11 +15,7 @@ class Setup extends Component {
         'Montserrat_Semibold': require('../../assets/Fonts/Montserrat-SemiBold.ttf'),
         'Montserrat_bold': require('../../assets/Fonts/Montserrat-Bold.ttf'),
         "Ionicons": require('@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.ttf'),  //MaterialIcons
-        "MaterialIcons": require('@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/MaterialIcons.ttf'),
-
-        
-        //...Ionicons.font, 
-        //...MaterialIcons.font
+        "MaterialIcons": require('@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/MaterialIcons.ttf')
     })
     this.setState({ loading: false })
 }

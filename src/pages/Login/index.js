@@ -3,8 +3,7 @@ import {
   StyleSheet,
   View,
   TouchableOpacity,
-  Image,
-
+  Image
 } from 'react-native';
 import {connect} from "react-redux";
 import {compose} from "redux";
@@ -12,11 +11,11 @@ import { Field, reduxForm } from 'redux-form';
 
 import InputText from "../../components/InputText";
 import {loginUser} from "../../actions/auth.actions";
-
+import Form from '../../components/Form';
 import Loader from "../../components/Loader";
 import {Actions} from 'react-native-router-flux';
-import { Container, Content, Item, Form,Input, Icon, Button, Text, Col, Row, Grid, Toast } from 'native-base';
-import Styles from './style';
+import { Container, Content, Item, Icon, Button, Text, Col, Row, Grid } from 'native-base';
+
 
 
 class Login extends Component{
@@ -42,6 +41,7 @@ class Login extends Component{
   }
 
   renderTextInput = (field) => {
+      console.log(field)
         const {meta: {touched, error}, label, secureTextEntry, maxLength, keyboardType, placeholder, input: {onChange, ...restInput}} = field;
         return (
             <View>
@@ -60,28 +60,9 @@ class Login extends Component{
 
 	render() {
     const { handleSubmit, loginUser} = this.props;
+    console.log(loginUser);
 		return(
       <Container>
-        	{/*<View style={styles.container}>
-              {(loginUser && loginUser.isLoading) && <Loader />}
-              <Logo/>
-              <Field
-                  name="email"
-                  placeholder="Email"
-                  component={this.renderTextInput} />
-              <Field
-                  name="userPassword"
-                  placeholder="Password"
-                  secureTextEntry={true}
-                  component={this.renderTextInput} />
-              <TouchableOpacity style={styles.button} onPress={handleSubmit(this.onSubmit)}>
-                <Text style={styles.buttonText}>Login</Text>
-              </TouchableOpacity>
-              <View style={styles.signupTextCont}>
-                <Text style={styles.signupText}>Do not have an account yet?</Text>
-                <TouchableOpacity onPress={this.signup}><Text style={styles.signupButton}> Signup</Text></TouchableOpacity>
-              </View>
-            </View>*/}
             <Content style={{ marginTop: 60, borderBottomColor: "#CCC", borderBottomWidth: 7 }} padder>
               {(loginUser && loginUser.isLoading) && <Loader />}
                 <Grid style={{}}>
@@ -102,29 +83,19 @@ class Login extends Component{
                         {/*<Input placeholder='Email or Phone Number' keyboardType="email-address"
                         onChangeText={e => setEmail(e)}  value={email} style={{ fontFamily: "Montserrat" }}
                           />*/}
-                        <Input
-                          name="email"
-                          underlineColorAndroid='#fff'
-                          placeholder="Email"
-                          placeholderTextColor = "#000"
-                          selectionColor="#fff"
-                          keyboardType="email-address"
-                          onSubmitEditing={()=> this.password.focus()}
-                          style={{ fontFamily: "Montserrat" }}
-                        />
+                        <Field
+                        name="email"
+                        placeholder="Email"
+                        component={this.renderTextInput}/>
                     </Item>
                     <Item regular style={{ marginTop: 10, borderRadius: 5, borderWidth: 2, borderColor: "#6A077F" }}>
                         <Icon name='lock' style={{ color: "#6A077F" }} />
                         {/*<Input placeholder='Password' secureTextEntry={true} style={{ fontFamily: "Montserrat" }}  onChangeText={e => setUserPassword(e)} value={userPassword} />*/}
-                        <Input
-                          name="userPassword"
-                          underlineColorAndroid='rgba(0,0,0,0)'
-                          placeholder="Password"
-                          secureTextEntry={true}
-                          placeholderTextColor = "#000"
-                          component={this.renderTextInput}
-                          style={{ fontFamily: "Montserrat" }}
-                        />
+                        <Field
+                        name="password"
+                        placeholder="Password"
+                        secureTextEntry={true}
+                        component={this.renderTextInput}/>
                     </Item>
                     <Grid>
                         <Row>
