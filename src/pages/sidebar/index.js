@@ -13,6 +13,7 @@ import {
   Thumbnail,
   Separator
 } from "native-base";
+
 import { Col, Row, Grid } from 'react-native-easy-grid';
 import styles from "./style";
 
@@ -133,7 +134,7 @@ class SideBar extends Component {
           style={{ flex: 1, backgroundColor: "#fff", top: -1 }}
         >
           <ImageBackground source={drawerCover} style={styles.drawerCover}>
-          
+
           <Grid>
             <Row style={{justifyContent : 'flex-end'}}>
             <Col style={{alignSelf : 'center' }}>

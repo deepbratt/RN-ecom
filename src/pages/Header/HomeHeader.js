@@ -55,9 +55,9 @@ export default function HomeHeader(props){
             <Input placeholder='Search for Products, Brands and More' />
           </Item>
         </View>
-        
+
         {
-          logoClick === true ? 
+          logoClick === true ?
             <View style={styles.tabRow}>
               <Grid>
                 {
@@ -78,8 +78,8 @@ export default function HomeHeader(props){
         :
           <View></View>
         }
-        
-        
+
+
         </>
     );
 }
