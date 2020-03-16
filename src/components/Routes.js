@@ -42,6 +42,7 @@ export default class Routes extends Component{
 						<Scene key="forgototp" component={ForgotOTP} />
 						<Scene key="setuppassword" component={SetUpPassword} />
 					</Scene>
+
 					<Scene key="app" drawer={true} hideNavBar={true} wrap={false} initial={this.props.isLoggedIn} contentComponent={props => <SideBar {...props} />} >
 						<Scene key="Home" component={Home} initial={true} />
 						<Scene key="MyProfile" component={MyProfile} />

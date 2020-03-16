@@ -17,6 +17,7 @@ import styles from "./style";
 
 const drawerCover = require("../../../assets/drawer-cover.png");
 const profileImage = require("../../../assets/contacts/sankhadeep.png");
+
 const datas = [
   {
     name: "Home",
@@ -131,7 +132,7 @@ class SideBar extends Component {
           style={{ flex: 1, backgroundColor: "#fff", top: -1 }}
         >
           <ImageBackground source={drawerCover} style={styles.drawerCover}>
-          
+
           <Grid>
             <Row style={{justifyContent : 'flex-end'}}>
             <Col style={{alignSelf : 'center' }}>
