@@ -4,6 +4,7 @@ import { Header, Left, Body, Right, Button, Icon, Title,Item,Input,Text,Content}
 import { StatusBar,View,Image } from "react-native";
 import styles from './styles';
 import { Col, Row, Grid } from 'react-native-easy-grid';
+import { Actions } from 'react-native-router-flux';
 const wantedLogo = require("../../../assets/icons/logo2.png");
 
 const tabData = [
@@ -23,7 +24,6 @@ const tabData = [
 
 export default function HomeHeader(props){
   const [logoClick,currentLogoClick] = useState(false);
-  
     return (
       <>
         <Header style={styles.HeadBg}>
@@ -31,7 +31,7 @@ export default function HomeHeader(props){
           <Left style={styles.barcont}>
             <Button
               transparent
-              onPress={() => Actions.sidebar()}>
+              onPress={() => Actions.drawerOpen()}>
               <Icon name="dehaze" type="MaterialIcons" style={styles.iconSet}/>
             </Button>
           </Left>
@@ -56,9 +56,9 @@ export default function HomeHeader(props){
             <Input placeholder='Search for Products, Brands and More' />
           </Item>
         </View>
-        
+
         {
-          logoClick === true ? 
+          logoClick === true ?
             <View style={styles.tabRow}>
               <Grid>
                 {
@@ -79,8 +79,8 @@ export default function HomeHeader(props){
         :
           <View></View>
         }
-        
-        
+
+
         </>
     );
 }

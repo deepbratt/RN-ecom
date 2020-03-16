@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Image,ImageBackground,AsyncStorage } from "react-native";
+import { Actions } from 'react-native-router-flux';
 import {
   Content,
   Text,
@@ -133,7 +134,7 @@ class SideBar extends Component {
           style={{ flex: 1, backgroundColor: "#fff", top: -1 }}
         >
           <ImageBackground source={drawerCover} style={styles.drawerCover}>
-          
+
           <Grid>
             <Row style={{justifyContent : 'flex-end'}}>
             <Col style={{alignSelf : 'center' }}>
@@ -155,8 +156,7 @@ class SideBar extends Component {
               <ListItem
                 button
                 noBorder
-                //onPress={() => this.props.navigation.navigate(data.route)}
-                onPress={() => Actions.data.route()}
+                onPress={() => Actions.Home()}
               >
                 <Left>
                   <Icon
