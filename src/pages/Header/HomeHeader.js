@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import {Actions} from 'react-native-router-flux';
 import { Header, Left, Body, Right, Button, Icon, Title,Item,Input,Text,Content} from 'native-base';
 import { StatusBar,View,Image } from "react-native";
 import styles from './styles';
