@@ -60,7 +60,7 @@ export default {
   },
   HeadBg:{
     backgroundColor:"#62138F",
-    marginTop:Platform.OS === "android" ? 0 : 0,
+    marginTop:Platform.OS === "android" ? 0 : -25,
     height:80
   },
   SignHeadBg:{

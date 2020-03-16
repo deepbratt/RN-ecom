@@ -19,6 +19,7 @@ import styles from "./style";
 
 const drawerCover = require("../../../assets/drawer-cover.png");
 const profileImage = require("../../../assets/contacts/sankhadeep.png");
+
 const datas = [
   {
     name: "Home",
@@ -155,7 +156,7 @@ class SideBar extends Component {
               <ListItem
                 button
                 noBorder
-                onPress={() => Actions.Home()}
+                onPress={() => Actions.productdetails()}
               >
                 <Left>
                   <Icon

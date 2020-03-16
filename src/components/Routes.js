@@ -42,17 +42,18 @@ export default class Routes extends Component{
 						<Scene key="forgototp" component={ForgotOTP} />
 						<Scene key="setuppassword" component={SetUpPassword} />
 					</Scene>
+
 					<Scene key="app" drawer={true} hideNavBar={true} wrap={false} initial={this.props.isLoggedIn} contentComponent={props => <SideBar {...props} />} >
-							<Scene key="Home" component={Home} initial={true} />
-							<Scene key="MyProfile" component={MyProfile} />
-							<Scene key="wanted7" component={Wanted7} />
-							<Scene key="wmalls" component={Wmalls} />
-							<Scene key="productdetails" component={ProductDetails}/>
-							<Scene key="cart" component={Cart} />
-							<Scene key="storedetails" component={StoreDetails} />
-							<Scene key="Orders" component={Orders} />
-							<Scene key="orderdetails" component={OrderDetail} />
-							<Scene key="logout" component={Logout} />
+						<Scene key="Home" component={Home} initial={true} />
+						<Scene key="MyProfile" component={MyProfile} />
+						<Scene key="wanted7" component={Wanted7} />
+						<Scene key="wmalls" component={Wmalls} />
+						<Scene key="productdetails" component={ProductDetails}/>
+						<Scene key="cart" component={Cart} />
+						<Scene key="storedetails" component={StoreDetails} />
+						<Scene key="Orders" component={Orders} />
+						<Scene key="orderdetails" component={OrderDetail} />
+						<Scene key="logout" component={Logout} />
 					</Scene>
 				</Scene>
 			</Router>
