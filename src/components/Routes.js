@@ -43,12 +43,12 @@ export default class Routes extends Component{
 						<Scene key="setuppassword" component={SetUpPassword} />
 					</Scene>
 					<Scene key="app" hideNavBar={true} initial={this.props.isLoggedIn}>
-						<Scene key="home" component={Home} initial={true} />
+						<Scene key="home" component={Home} />
 						<Scene key="profile" component={MyProfile} />
 						<Scene key="wanted7" component={Wanted7} />
 						<Scene key="wmalls" component={Wmalls} />
-						<Scene key="productdetails" component={ProductDetails}/>
-						<Scene key="cart" component={Cart} />
+						<Scene key="productdetails" component={ProductDetails} />
+						<Scene key="cart" component={Cart} initial={true} />
 						<Scene key="storedetails" component={StoreDetails} />
 						<Scene key="orders" component={Orders} />
 						<Scene key="orderdetails" component={OrderDetail} />
