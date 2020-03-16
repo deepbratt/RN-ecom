@@ -9,7 +9,7 @@ import ProductDetails from "./../pages/productDetails";
 import SignUp from "./../pages/SignUp";
 import SignupDetails from "./../pages/SignUp/SignupDetails"
 import SignupOtp from "./../pages/SignUp/SignupOtp";
-import Login from "./../pages/login";
+import Login from "./../pages/Login";
 import Logout from "./../pages/Logout";
 import ForgotPassword from "./../pages/ForgotPassword";
 import SignupAddress from "./../pages/SignUp/SignupAddress";
