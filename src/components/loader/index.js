@@ -10,7 +10,7 @@ export default function Loader() {
         <Content>
           <Grid>
             <Row>
-                <Image source={{ uri: 'https://wanted7cdn.s3.ap-south-1.amazonaws.com/uploads/defaults/logo.png'}} style={{width:130,height:100,marginTop:deviceHeight/2-50}} />
+                <Image source={{ uri: 'https://wanted7cdn.s3.ap-south-1.amazonaws.com/uploads/defaults/wanted_7_logo.png'}} style={{width:130,height:100,marginTop:deviceHeight/2-90}} />
             </Row>
           </Grid>
         </Content>
