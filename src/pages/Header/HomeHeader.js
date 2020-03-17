@@ -13,11 +13,11 @@ const tabData = [
   },
   {
     label: 'WANTED7',
-    routeName: 'Wanted7'
+    routeName: 'wanted7'
   },
   {
     label: 'WMALLS',
-    routeName: 'WMalls'
+    routeName: 'wmalls'
   },
 ]
 

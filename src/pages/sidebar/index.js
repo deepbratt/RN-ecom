@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Image,ImageBackground,AsyncStorage } from "react-native";
-import { Actions } from 'react-native-router-flux';
 import {
   Content,
   Text,
@@ -13,7 +12,6 @@ import {
   Thumbnail,
   Separator
 } from "native-base";
-
 import { Col, Row, Grid } from 'react-native-easy-grid';
 import styles from "./style";
 
@@ -66,21 +64,21 @@ const datas = [
   },
   {
     name: "Cart",
-    route: "Cart",
+    route: "cart",
     icon: "cart",
     bg: "#C5F442",
     arrow : 'keyboard-arrow-right'
   },
   {
     name: "Product Details",
-    route: "ProductDetails",
+    route: "productdetails",
     icon: "cart",
     bg: "#C5F442",
     arrow : 'keyboard-arrow-right'
   },
   {
     name: "Logout",
-    route: "Logout",
+    route: "logout",
     icon: "exit",
     bg: "#C5F442",
     arrow : 'keyboard-arrow-right'
@@ -94,14 +92,14 @@ const datas = [
   },
   {
     name: "Store Details",
-    route: "StoreDetails",
+    route: "storedetails",
     icon: "cart",
     bg: "#C5F442",
     arrow : 'keyboard-arrow-right'
   },
   {
     name: "Order Details",
-    route: "OrderDetails",
+    route: "orderdetails",
     icon: "cart",
     bg: "#C5F442",
     arrow : 'keyboard-arrow-right'
@@ -122,10 +120,12 @@ class SideBar extends Component {
   checkStorage = async() => {
     let myStorage = await AsyncStorage.getItem('MyWanted7Store');
     let customerId = JSON.parse(myStorage);
-    this.setState({custId : customerId})
+    console.warn(this.props);
+    //this.setState({custId : customerId})
   }
 
   render() {
+    console.warn(this.props.isLoggedIn);
     const {custId} = this.state;
     return (
       <Container>
@@ -156,7 +156,7 @@ class SideBar extends Component {
               <ListItem
                 button
                 noBorder
-                onPress={() => Actions.productdetails()}
+                onPress={() => this.props.navigation.navigate(data.route)}
               >
                 <Left>
                   <Icon
